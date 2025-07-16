@@ -23,6 +23,11 @@ namespace TomAuthApi
 
             builder.Services.AddInterfaces(builder.Configuration);
 
+            builder.WebHost.ConfigureKestrel(serverOptions =>
+            {
+                serverOptions.ListenAnyIP(80);
+            });
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

@@ -1,0 +1,12 @@
+﻿version: "3.9"
+
+services:
+  tom-auth:
+    container_name: tom-auth-api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5010:80"
+    volumes:
+    - ./dataprotection-keys:/home/app/.aspnet/DataProtection-Keys   

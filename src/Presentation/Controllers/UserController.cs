@@ -26,4 +26,17 @@ public class UserController: BaseController
             return Error(ex);
         }
     }
+
+    [HttpGet("[Action]/{id}")]
+    public async Task<IActionResult> GetUserById(string id)
+    {
+        try
+        {
+            return Ok(await _service.GetUserById(id));
+        }
+        catch (Exception ex)
+        {
+            return Error(ex);
+        }
+    }
 }

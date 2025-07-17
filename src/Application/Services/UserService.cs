@@ -20,4 +20,9 @@ public class UserService: IUserService
     {
         return _mapper.Map<ICollection<UserDto>>(await _repository.GetAllUsers());
     }
+
+    public async Task<UserDto> GetUserById(string id)
+    {
+        return _mapper.Map<UserDto>(await _repository.GetUserById(id));
+    }
 }

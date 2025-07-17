@@ -20,4 +20,13 @@ public class UserRepository : IUserRepository
 
         return users;
     }
+
+    public async Task<User> GetUserById(string id)
+    {
+        var user = await _context.Users
+            .Find(u => u._id == id)
+            .FirstOrDefaultAsync();
+
+        return user;
+    }
 }

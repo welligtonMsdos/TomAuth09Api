@@ -5,4 +5,5 @@ namespace TomAuthApi.src.Application.Interfaces;
 public interface IUserService
 {
     Task<ICollection<UserDto>> GetAllUsers();
+    Task<UserDto> GetUserById(string id);
 }

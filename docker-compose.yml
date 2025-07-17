@@ -9,4 +9,6 @@ services:
     ports:
       - "5010:80"
     volumes:
-    - ./dataprotection-keys:/home/app/.aspnet/DataProtection-Keys   
+      - ./dataprotection-keys:/home/app/.aspnet/DataProtection-Keys
+
+  

@@ -38,7 +38,9 @@ namespace TomAuthApi
                 app.MapOpenApi();
             }
 
-            app.UseHttpsRedirection();
+            app.UseCors("CorsPolicy");
+
+            //app.UseHttpsRedirection();
 
             app.UseAuthorization();
 

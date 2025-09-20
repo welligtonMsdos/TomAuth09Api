@@ -39,4 +39,17 @@ public class UserController: BaseController
             return Error(ex);
         }
     }
+
+    [HttpGet("[Action]/{email}")]
+    public async Task<IActionResult> GetUserByEmail(string email)
+    {
+        try
+        {
+            return Ok(await _service.GetUserByEmail(email));
+        }
+        catch (Exception ex)
+        {
+            return Error(ex);
+        }
+    }
 }

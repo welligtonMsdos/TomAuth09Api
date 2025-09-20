@@ -6,4 +6,5 @@ public interface IUserService
 {
     Task<ICollection<UserDto>> GetAllUsers();
     Task<UserDto> GetUserById(string id);
+    Task<UserDto> GetUserByEmail(string email);
 }

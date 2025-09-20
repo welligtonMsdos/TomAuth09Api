@@ -20,11 +20,19 @@ public class UserRepository : IUserRepository
 
         return users;
     }
-
     public async Task<User> GetUserById(string id)
     {
         var user = await _context.Users
             .Find(u => u._id == id)
+            .FirstOrDefaultAsync();
+
+        return user;
+    }
+
+    public async Task<User> GetUserByEmail(string email)
+    {
+        var user = await _context.Users
+            .Find(u => u.Email == email)
             .FirstOrDefaultAsync();
 
         return user;

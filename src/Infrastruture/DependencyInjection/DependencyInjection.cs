@@ -1,7 +1,7 @@
 ﻿using TomAuthApi.src.Application.Interfaces;
 using TomAuthApi.src.Application.Services;
 using TomAuthApi.src.Domain.Interfaces;
-using TomAuthApi.src.Infrastruture.Repositories;
+using TomAuthApi.src.Infrastruture.Data.Repositories;
 
 namespace TomAuthApi.src.Infrastruture.DependencyInjection;
 

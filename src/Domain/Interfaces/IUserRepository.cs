@@ -2,9 +2,7 @@
 
 namespace TomAuthApi.src.Domain.Interfaces;
 
-public interface IUserRepository
-{
-    Task<ICollection<User>> GetAllUsers();
-    Task<User> GetUserById(string id);
-    Task<User> GetUserByEmail(string email);
+public interface IUserRepository: IQuery<User>, ICommand<User>
+{    
+    Task<User> GetByEmail(string email);   
 }

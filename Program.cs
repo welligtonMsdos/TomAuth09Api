@@ -1,4 +1,3 @@
-
 using Scalar.AspNetCore;
 using TomAuthApi.src.Infrastruture.Data.Context;
 using TomAuthApi.src.Infrastruture.DependencyInjection;
@@ -11,15 +10,13 @@ namespace TomAuthApi
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
-
             builder.Services.AddControllers();
-            // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+
             builder.Services.AddOpenApi();
 
             builder.Services.AddSingleton<AuthContext>();
 
-            builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());    
+            builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             builder.Services.AddInterfaces(builder.Configuration);
 
@@ -30,13 +27,12 @@ namespace TomAuthApi
 
             var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
-            if (app.Environment.IsDevelopment())
-            {
-                app.MapScalarApiReference();
+            //if (app.Environment.IsDevelopment())
+            //{
+            app.MapScalarApiReference();
 
-                app.MapOpenApi();
-            }
+            app.MapOpenApi();
+            //}
 
             app.UseCors("CorsPolicy");
 

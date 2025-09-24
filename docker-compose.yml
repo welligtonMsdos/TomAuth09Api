@@ -1,8 +1,6 @@
-﻿version: "3.9"
-
-services:
+﻿services:
   tom-auth:
-    container_name: tom-auth-api
+    container_name: tom-auth09-api
     build:
       context: .
       dockerfile: Dockerfile
